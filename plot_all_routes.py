@@ -42,11 +42,6 @@ for route, stop_names in stop_list.items():
 
 print(stops)
 
-
-
-            
-
-
 # Colors for routes
 colors = {
     "Route Green": "green",
