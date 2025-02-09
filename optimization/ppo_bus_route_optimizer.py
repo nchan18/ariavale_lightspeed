@@ -6,7 +6,7 @@ from stable_baselines3 import PPO
 
 # Load bus stop data
 bus_stops = {}
-with open("stop_list.txt", "r") as stops:
+with open("../create_map/stop_list.txt", "r") as stops:
     for stop in stops:
         lat_index = stop.find("Latitude")
         lon_index = stop.find("Longitude")

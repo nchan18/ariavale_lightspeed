@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Define all bus stops with their IDs, names, latitudes, and longitudes
 bus_stops = {}
-with open("stop_list.txt", "r") as stops:
+with open("../create_map/stop_list.txt", "r") as stops:
     for stop in stops:
         lat_index = stop.find("Latitude")
         lon_index = stop.find("Longitude")
@@ -22,7 +22,7 @@ stop_list = {}
 route_name = None
 route_stop_list = []
 
-with open("route_stops.txt", "r") as routes:
+with open("../create_map/route_stops.txt", "r") as routes:
     for route in routes:
         if route.startswith("Route: "):
             route_name = route[len("Route: "):-1].strip()
