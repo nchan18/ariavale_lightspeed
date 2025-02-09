@@ -1,39 +1,48 @@
+import time
 import passiogo
 
-# Step 1: Define the Transportation System ID for UNC Charlotte
-uncc_system_id = 1053  # UNC Charlotte's ID
+# Step 1: Define functions first
+def adjust_traffic_light(intersection, bus_eta):
+    if bus_eta < 30:  # If the bus is 30 seconds away
+        print(f"Adjusting traffic light at {intersection} to green for bus.")
+        send_traffic_light_command(intersection, "turn_green")
+    else:
+        print(f"No adjustment needed at {intersection}.")
 
-# Step 2: Get the TransportationSystem object for UNC Charlotte
-system = passiogo.getSystemFromID(uncc_system_id)
+def send_traffic_light_command(intersection, command):
+    # Simulate sending a command to the traffic light controller
+    print(f"Sending command to {intersection}: {command}")
+    # Replace this with actual API calls or hardware integration
 
-# Step 3: Retrieve all stops for UNC Charlotte
-stops = system.getStops()
-
-# Step 4: Print the stops
-print(f"Stops for UNC Charlotte (System ID: {uncc_system_id}):")
-for stop in stops:
-    print(f"Stop ID: {stop.id}, Name: {stop.name}, Latitude: {stop.latitude}, Longitude: {stop.longitude}")
-    
-
-
-# Step 1: Get the TransportationSystem object for UNC Charlotte
+# Step 2: Fetch real-time bus data with predicted arrival times
 system = passiogo.getSystemFromID(1053)  # UNC Charlotte's system ID
 
-# Step 2: Fetch all routes for the transportation system
-routes = system.getRoutes()
+# Step 3: Map bus stops to intersections
+stop_to_intersection = {
+    "Student Union West": "IntersectionX",
+    "Fretwell North": "IntersectionY",
+    "Light Rail East": "IntersectionZ",
+}
 
-# Step 3: Create a dictionary to store route-stop mappings
-route_stop_mapping = {}
+# Step 4: Run the optimization loop
+while True:
+    buses = system.getVehicles()  # Fetch real-time bus data
+    for bus in buses:
+        # Inspect the bus object to find the correct attribute
+        print(bus.__dict__)  # Debugging: Print all attributes of the bus object
 
-# Step 4: Fetch stops for each route and store the mapping
-for route in routes:
-    route_name = route.name  # Get the route name
-    stops = route.getStops()  # Fetch stops for this route
-    stop_names = [stop.name for stop in stops]  # Extract stop names
-    route_stop_mapping[route_name] = stop_names  # Add to the dictionary
+        # Example: Replace 'next_stop' with the correct attribute
+        if hasattr(bus, 'next_stop'):  # Check if the attribute exists
+            next_stop = bus.next_stop
+        else:
+            print(f"Bus {bus.id} does not have a 'next_stop' attribute.")
+            continue  # Skip this bus and move to the next one
 
-# Step 5: Print the route-stop mapping
-for route_name, stop_names in route_stop_mapping.items():
-    print(f"Route: {route_name}")
-    print(f"Stops: {', '.join(stop_names)}")
-    print("-" * 40)  # Separator for readability
+        eta = bus.eta  # Get the predicted arrival time at the next stop
+
+        if next_stop in stop_to_intersection:
+            intersection = stop_to_intersection[next_stop]
+            print(f"Bus {bus.id} will arrive at {intersection} in {eta} seconds.")
+            adjust_traffic_light(intersection, eta)
+
+    time.sleep(30)  # Wait 30 seconds before fetching data again
