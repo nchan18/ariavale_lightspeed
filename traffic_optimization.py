@@ -161,4 +161,4 @@ while True:
         else:
             logging.warning(f"Bus {bus.id} does not have a predicted next stop. Route: {bus.routeName}")
 
-    time.sleep(30)  # Wait 30 seconds before fetching data again
+     # Wait 30 seconds before fetching data again
