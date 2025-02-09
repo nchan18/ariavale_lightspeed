@@ -23,7 +23,7 @@ edges = edges[edges['highway'] != 'footway']
 # Plot the stops form route_stops.txt
 stops_lat = []
 stops_lon = []
-with open("route_stops.txt", "r") as stops:
+with open("stop_list.txt", "r") as stops:
     for stop in stops:
         lat_index = stop.find("Latitude")
         lon_index = stop.find("Longitude")
@@ -38,7 +38,7 @@ print(stops_lon)
 
 #add the stops as nodes to the graph
 for i in range(len(stops_lat)):
-    G.add_node(i, x=stops_lon[i], y=stops_lat[i])
+    Gn.add_node(i, x=stops_lon[i], y=stops_lat[i])
 
 #find the stop nodes closest to the road network
 for i in range(len(stops_lat)):

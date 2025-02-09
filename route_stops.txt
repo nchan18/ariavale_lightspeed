@@ -1,17 +1,17 @@
 Route: Route Gold
-Stops: Student Union West, Hunt Hall, Alumni Way West, Reese East, Robinson Hall North, Cato Hall North, Fretwell North, Science Building, Union Deck, Light Rail East, Student Health East, Fretwell South, Cato Hall South, Robinson Hall South, Levine Hall
+Stops: Student Union West, Union Deck, Light Rail East, Student Health East, Fretwell South, Cato Hall South, Robinson Hall South, Levine Hall, Hunt Hall, Alumni Way West, Reese East, Robinson Hall North, Cato Hall North, Fretwell North, Science Building,  
 ----------------------------------------
 Route: Silver
-Stops: Student Union West, Student Union East, CRI Deck, Fretwell North, Science Building, Auxiliary Services, Student Health North, Duke Centennial Hall, EPIC South, Athletics Complex East, Martin Hall, Lot 6, Lot 5A, East Deck 2, Athletics Complex West, EPIC North, Grigg Hall, BATT Cave, Portal West
+Stops: Student Union West, Athletics Complex West, EPIC North, Grigg Hall, BATT Cave, Portal West, CRI Deck, Duke Centennial Hall, EPIC South, Athletics Complex East, Student Union East, Auxiliary Services, Student Health North, Martin Hall, Lot 6, Lot 5A, East Deck 2, Fretwell North, Science Building
 ----------------------------------------
 Route: Shopping
-Stops: Hunt Hall, Light Rail East, Levine Hall, Martin Hall, Patel Brothers, Target, Harris Teeter
+Stops: Light Rail East, Martin Hall, Target, Patel Brothers, Harris Teeter, Levine Hall, Hunt Hall
 ----------------------------------------
 Route: Route Green
-Stops: Student Union East, Robinson Hall North, Cato Hall North, Fretwell North, Fretwell South, Cato Hall South, Robinson Hall South, FM/PPS, North Deck, Light Rail West, Belk Hall, Auxiliary Services, Reese West, Cone Deck, Alumni Way East, South Village Deck, Gage Undergraduate Admissions Center, Student Health North
+Stops: Student Union East,Auxiliary Services, Fretwell South, Cato Hall South, Robinson Hall South, Reese West, Cone Deck, Alumni Way East, South Village Deck, Gage Undergraduate Admissions Center, Robinson Hall North, Cato Hall North, Fretwell North, Student Health North, FM/PPS, North Deck, Light Rail West, Belk Hall
 ----------------------------------------
 Route: Route Greek
-Stops: Student Union West, Science Building, Greek Village 1, Greek Village 8, Greek Village 4
+Stops: Student Union West, Science Building, Greek Village 4, Greek Village 8, Greek Village 1
 ----------------------------------------
 Route: Route Red
-Stops: Student Union West, Student Union East, Fretwell North, Fretwell South, Football Stadium/Gate 1
+Stops: Student Union West, Football Stadium/Gate 1, Student Union East, Fretwell South
